@@ -1,9 +1,12 @@
 ---
-- name: install baseline package on {{ ansible_hostname }}
-  ansible.builtin.package:
-    name: "{{ item }}"
-    state: present
-  loop:
-    - epel-release
-    - vim
-    - bash-completion
+- name: install default package
+  hosts: all
+  tasks:
+  - name: install baseline package on {{ ansible_hostname }}
+    ansible.builtin.package:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - epel-release
+      - vim
+      - bash-completion
