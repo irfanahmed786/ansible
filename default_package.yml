@@ -1,0 +1,8 @@
+---
+- name: install baseline package on {{ ansible_hostname }}
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - epel-release
+    - vim
