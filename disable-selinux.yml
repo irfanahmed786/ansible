@@ -1,7 +1,10 @@
 ---
-- name: disable selinux on {{ ansible_hostname }}
-  ansible.builtin.lineinfile:
-  path: /etc/selinux/config
-  regexp: 'SELINUX='
-  line: SELINUX=disabled
-when: ansible_selinux.status == "enabled"
+- name: Hello World Sample
+  hosts: all
+  tasks:
+  - name: disable selinux on {{ ansible_hostname }}
+    ansible.builtin.lineinfile:
+    path: /etc/selinux/config
+    regexp: 'SELINUX='
+    line: SELINUX=disabled
+  when: ansible_selinux.status == "enabled"
