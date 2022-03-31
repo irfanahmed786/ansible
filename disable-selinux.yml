@@ -1,5 +1,5 @@
 ---
-- name: Hello World Sample
+- name: disbale selinux
   hosts: all
   tasks:
   - name: disable selinux on {{ ansible_hostname }}
