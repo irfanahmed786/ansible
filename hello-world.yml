@@ -3,4 +3,4 @@
   tasks:
     - name: Hello Message
       debug:
-        msg: "This is Automation World!"
+        msg: "Hello Automation World!"
